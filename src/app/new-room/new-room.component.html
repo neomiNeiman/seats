@@ -1,0 +1,33 @@
+
+<div class="allPage">
+<h1>
+  New Room
+</h1>
+
+<form [formGroup]="newRoom" (ngSubmit)="save()">
+<clr-input-container>
+  <label>
+ Room name:</label>
+  <input clrInput type="text" formControlName="roomName">
+  <clr-control-error>Required</clr-control-error>
+</clr-input-container>
+<clr-input-container>
+<label>
+  Number of rows: </label>
+   <input clrInput type="number" ngModel="10" formControlName="rowCount">
+   <clr-control-error>Must be 1 or more</clr-control-error>
+  </clr-input-container>
+<clr-input-container>
+<label>
+  Average number of seats per row:</label>
+   <input clrInput type="number" ngModel="20"  formControlName="avgSeatsInRow">
+   <clr-control-error>Must be 1 or more</clr-control-error>
+</clr-input-container>
+<br>
+<button class="btn btn-primary btn-icon" type="submit" [disabled]="!newRoom.valid">
+<clr-icon shape="check"></clr-icon>
+save room</button>
+
+</form>
+</div>
+
